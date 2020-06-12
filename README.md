@@ -2,6 +2,8 @@
 
 Health reporter is a REST API  built in flask that can be used to retrieve the metrics information and metadata of an AWS EC2 instance.
 
+**api-link**: [http://healthrepapi-env.eba-rgbprbna.ap-south-1.elasticbeanstalk.com](http://healthrepapi-env.eba-rgbprbna.ap-south-1.elasticbeanstalk.com)
+
 ## Technology Used
 - **Programming Languages**
 	- Python
