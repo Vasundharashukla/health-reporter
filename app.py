@@ -7,8 +7,8 @@ from ec2_metadata import ec2_metadata as ecm
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "vasundharashukla7998"
 
-cloudwatch = boto3.client('cloudwatch', aws_access_key_id="AKIAJXHELWW6SCJMI7DA",
-                          aws_secret_access_key="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", region_name='ap-south-1')
+cloudwatch = boto3.client('cloudwatch', aws_access_key_id="<access-key>",
+                          aws_secret_access_key="<secret-key>", region_name='ap-south-1')
 
 ##paginator = cloudwatch.get_paginator('list_metrics')
 ##for response in paginator.paginate(MetricName='CPUUtilization',
@@ -34,7 +34,7 @@ def fork(value):
             attributes = request.get_json(force=True)
             print(attributes)
             resp = dict()
-            dims = attributes.get('dimensions', {})
+            dims = attributes.get('dimensions', [])
             interval = attributes.get('interval', 2)
             for attr in attributes.get('attributes', []):
                 resp[attr] = metricStats(attr, dims, interval)
