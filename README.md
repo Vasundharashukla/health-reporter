@@ -17,22 +17,20 @@ Health reporter is a REST API  built in flask that can be used to retrieve the m
 
 ## API Endpoints
 
-- /fork/metrics - Accepts a post request with json data in the given format:
+- ```/fork/metrics``` - Accepts a post request with json data in the given format:
 ```javascript
 {
     "dimensions": [
         {
-            "Name": "InstanceId", "Value": <your-instance-id>
+            "Name": "InstanceId", "Value": <your-instance-id> // Value of all the instance ids. Default value is empty.
         }
-        // Value of all the instance ids. Default value is empty.
+   
     ],
-    "attributes": [
-        // all the metric names for which you want data. Default value is empty
-    ],
+    "attributes": [], // all the metric names for which you want data. Default value is empty
     "interval": 2 // <number of days for which you need data. default value is 2.>
 }
 ```
-- /fork/metadata - get metadata for your instance. No payload required.
+- ```/fork/metadata``` - get metadata for your instance. No payload required.
 
 ## Credits
 - API created and developed by [Vasundhara Shukla](https://github.com/Vasundharashukla/ "Vasundhara Shukla").
